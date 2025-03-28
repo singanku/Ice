@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello in Different Formats</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="hello">Hello!</h1>
+
+    <script>
+        const formats = [
+            'Hello!',
+            'HELLO!',
+            'hello...',
+            '<i>Hello</i>',
+            '<b>Hello</b>',
+            '<u>Hello</u>',
+            '<span style="color:red">Hello</span>',
+            '<span style="font-size:50px">Hello</span>',
+            '<span style="text-shadow: 2px 2px 5px gray">Hello</span>'
+        ];
+
+        let index = 0;
+        document.getElementById('hello').addEventListener('click', function() {
+            index = (index + 1) % formats.length;
+            this.innerHTML = formats[index];
+        });
+    </script>
+</body>
+</html>
